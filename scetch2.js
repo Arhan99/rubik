@@ -142,7 +142,7 @@ class Rubik {
     this.colorBack = colorBack;
     this.colorLeft = colorLeft;
     this.colorRight = colorRight;
-    this.axisFront = new p5.Vector(0, 0, 1);
+    this.axisFront = new p5.Vector(0, 0, -1);
     this.axisTop = new p5.Vector(0, 1, 0);
     this.axisSide = new p5.Vector(1, 0, 0);
     this.peaces = {
@@ -623,6 +623,7 @@ class Rubik {
     ];
   }
   drawByList() {
+    // var lineSideTop = [this.sideTop[0], this.sideTop[3], this.sideTop[6]];
     this.sideTop.forEach(side => {
       // console.log("draw top peace:", side);
       side.drawPeace(side.x, side.y, side.z);
@@ -699,36 +700,10 @@ class Rubik {
     this.sideBack[0] = this.sideTop[2];
     this.sideBack[1] = this.sideTop[1];
     this.sideBack[2] = this.sideTop[0];
-    console.log("left after top:");
-    for (let i = 0; i < 7; i += 3) {
-      console.log(
-        "-->",
-        this.sideLeft[i],
-        this.sideLeft[i + 1],
-        this.sideLeft[i + 2]
-      );
-    }
+    console.log(this.peaces);
   }
   rotateLeft(angl) {
     const tempAxis = this.axisSide;
-    console.log("left before:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideLeft[i],
-        this.sideLeft[i + 1],
-        this.sideLeft[i + 2]
-      );
-    }
-    console.log("top before left:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideTop[i],
-        this.sideTop[i + 1],
-        this.sideTop[i + 2]
-      );
-    }
     this.sideLeft.forEach((item, _) => {
       item.rotatePeace(angl, tempAxis);
     });
@@ -746,17 +721,6 @@ class Rubik {
     ];
 
     this.sideLeft = newLeftSideState;
-
-    console.log("left after:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideLeft[i],
-        this.sideLeft[i + 1],
-        this.sideLeft[i + 2]
-      );
-    }
-
     // checked
     this.sideTop[0] = this.sideLeft[0];
     this.sideTop[3] = this.sideLeft[1];
@@ -773,42 +737,7 @@ class Rubik {
     this.sideBack[2] = this.sideLeft[0];
     this.sideBack[5] = this.sideLeft[3];
     this.sideBack[8] = this.sideLeft[6];
-    console.log("top after left:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideTop[i],
-        this.sideTop[i + 1],
-        this.sideTop[i + 2]
-      );
-    }
-    console.log("back after left:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideBack[i],
-        this.sideBack[i + 1],
-        this.sideBack[i + 2]
-      );
-    }
-    console.log("botom after left:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideBottom[i],
-        this.sideBottom[i + 1],
-        this.sideBottom[i + 2]
-      );
-    }
-    console.log("front after left:");
-    for (let i = 0; i < 9; i += 3) {
-      console.log(
-        "-->",
-        this.sideFront[i],
-        this.sideFront[i + 1],
-        this.sideFront[i + 2]
-      );
-    }
+    console.log(this.peaces);
   }
 
   rotateFront(angl) {
@@ -987,13 +916,13 @@ function keyPressed() {
     rotatFront = 0;
   }
   if (keyCode === KeyA) {
-    rotatTop += 90;
+    rotatTop += 45;
     cubik.rotateTop(rotatTop);
   } else if (keyCode === KeyD) {
-    rotatLeft += 90;
+    rotatLeft += 45;
     cubik.rotateLeft(rotatLeft);
   } else if (keyCode === KeyF) {
-    rotatFront += 90;
+    rotatFront += 45;
     cubik.rotateFront(rotatFront);
   }
 }
