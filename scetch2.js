@@ -537,140 +537,118 @@ class Rubik {
         0
       ),
     };
+    // збс
     this.sideLeft = [
       this.peaces.leftBackTopCorner,
       this.peaces.leftMiddleTopCorner,
       this.peaces.leftFrontTopCorner,
+
       this.peaces.leftBackMiddleCorner,
       this.peaces.leftMiddleMiddleCorner,
       this.peaces.leftFrontMiddleCorner,
+
       this.peaces.leftBackBottomCorner,
       this.peaces.leftMiddleBottomCorner,
       this.peaces.leftFrontBottomCorner,
     ];
+    //збс
     this.sideRight = [
-      this.peaces.rightBackTopCorner,
-      this.peaces.rightMiddleTopCorner,
-      this.peaces.rightFrontTopCorner,
-      this.peaces.rightBackMiddleCorner,
-      this.peaces.rightMiddleMiddleCorner,
-      this.peaces.rightFrontMiddleCorner,
-      this.peaces.rightBackBottomCorner,
-      this.peaces.rightMiddleBottomCorner,
-      this.peaces.rightFrontBottomCorner,
+      this.peaces.rightFrontTop,
+      this.peaces.rightMiddleTop,
+      this.peaces.rightBackTop,
+
+      this.peaces.rightFrontMiddle,
+      this.peaces.rightMiddleMiddle,
+      this.peaces.rightBackMiddle,
+
+      this.peaces.rightFrontBottom,
+      this.peaces.rightMiddleBottom,
+      this.peaces.rightBackBottom,
     ];
+    // збс
     this.sideTop = [
       this.peaces.leftBackTopCorner,
       this.peaces.middleBackTop,
       this.peaces.rightBackTop,
+
       this.peaces.leftMiddleTopCorner,
       this.peaces.middleMiddleTop,
       this.peaces.rightMiddleTop,
+
       this.peaces.leftFrontTopCorner,
       this.peaces.middleFrontTop,
       this.peaces.rightFrontTop,
     ];
+    //збс
     this.sideBottom = [
       this.peaces.leftFrontBottomCorner,
       this.peaces.middleFrontBottom,
       this.peaces.rightFrontBottom,
+
       this.peaces.leftMiddleBottomCorner,
       this.peaces.middleMiddleBottom,
       this.peaces.rightMiddleBottom,
+
       this.peaces.leftBackBottomCorner,
       this.peaces.middleBackBottom,
       this.peaces.rightBackBottom,
     ];
+    //збс
     this.sideFront = [
       this.peaces.leftFrontTopCorner,
-      this.peaces.middleFrontTopCorner,
-      this.peaces.rightFrontTopCorner,
+      this.peaces.middleFrontTop,
+      this.peaces.rightFrontTop,
+
       this.peaces.leftFrontMiddleCorner,
-      this.peaces.middleFrontMiddleCorner,
-      this.peaces.rightFrontMiddleCorner,
+      this.peaces.middleFrontMiddle,
+      this.peaces.rightFrontMiddle,
+
       this.peaces.leftFrontBottomCorner,
-      this.peaces.middleFrontBottomCorner,
-      this.peaces.rightFrontBottomCorner,
+      this.peaces.middleFrontBottom,
+      this.peaces.rightFrontBottom,
     ];
+    // збс
     this.sideBack = [
+      this.peaces.rightBackTop,
+      this.peaces.middleBackTop,
       this.peaces.leftBackTopCorner,
-      this.peaces.middleBackTopCorner,
-      this.peaces.rightBackTopCorner,
+
+      this.peaces.rightBackMiddle,
+      this.peaces.middleBackMiddle,
       this.peaces.leftBackMiddleCorner,
-      this.peaces.middleBackMiddleCorner,
-      this.peaces.rightBackMiddleCorner,
+
+      this.peaces.rightBackBottom,
+      this.peaces.middleBackBottom,
       this.peaces.leftBackBottomCorner,
-      this.peaces.middleBackBottomCorner,
-      this.peaces.rightBackBottomCorner,
     ];
   }
   drawByList() {
-    const lbtc = this.peaces.leftBackTopCorner;
-    const mbt = this.peaces.middleBackTop;
-    const rbt = this.peaces.rightBackTop;
-    const lmtc = this.peaces.leftMiddleTopCorner;
-    const mmt = this.peaces.middleMiddleTop;
-    const rmt = this.peaces.rightMiddleTop;
-    const lft = this.peaces.leftFrontTopCorner;
-    const lftc = this.peaces.middleFrontTop;
-    const mft = this.peaces.rightFrontTop;
-
-    lbtc.drawPeace(lbtc.x, lbtc.y, lbtc.z);
-    mbt.drawPeace(mbt.x, mbt.y, mbt.z);
-    rbt.drawPeace(rbt.x, rbt.y, rbt.z);
-    lmtc.drawPeace(lmtc.x, lmtc.y, lmtc.z);
-    mmt.drawPeace(mmt.x, mmt.y, mmt.z);
-    rmt.drawPeace(rmt.x, rmt.y, rmt.z);
-    lft.drawPeace(lft.x, lft.y, lft.z);
-    lftc.drawPeace(lftc.x, lftc.y, lftc.z);
-    mft.drawPeace(mft.x, mft.y, mft.z);
-
-    const lbmc = this.peaces.leftBackMiddleCorner;
-    const mbm = this.peaces.middleBackMiddle;
-    const rbm = this.peaces.rightBackMiddle;
-    const lmmc = this.peaces.leftMiddleMiddleCorner;
-    const mmm = this.peaces.middleMiddleMiddle;
-    const rmm = this.peaces.rightMiddleMiddle;
-    const lfm = this.peaces.leftFrontMiddleCorner;
-    const lfmc = this.peaces.middleFrontMiddle;
-    const mfm = this.peaces.rightFrontMiddle;
-
-    lbmc.drawPeace(lbmc.x, lbmc.y, lbmc.z);
-    mbm.drawPeace(mbm.x, mbm.y, mbm.z);
-    rbm.drawPeace(rbm.x, rbm.y, rbm.z);
-    lmmc.drawPeace(lmmc.x, lmmc.y, lmmc.z);
-    mmm.drawPeace(mmm.x, mmm.y, mmm.z);
-    rmm.drawPeace(rmm.x, rmm.y, rmm.z);
-    lfm.drawPeace(lfm.x, lfm.y, lfm.z);
-    lfmc.drawPeace(lfmc.x, lfmc.y, lfmc.z);
-    mfm.drawPeace(mfm.x, mfm.y, mfm.z);
-
-    const lbbc = this.peaces.leftBackBottomCorner;
-    const mbb = this.peaces.middleBackBottom;
-    const rbb = this.peaces.rightBackBottom;
-    const lmbc = this.peaces.leftMiddleBottomCorner;
-    const mmb = this.peaces.middleMiddleBottom;
-    const rmb = this.peaces.rightMiddleBottom;
-    const lfb = this.peaces.leftFrontBottomCorner;
-    const lfbc = this.peaces.middleFrontBottom;
-    const mfb = this.peaces.rightFrontBottom;
-
-    lbbc.drawPeace(lbbc.x, lbbc.y, lbbc.z);
-    mbb.drawPeace(mbb.x, mbb.y, mbb.z);
-    rbb.drawPeace(rbb.x, rbb.y, rbb.z);
-    lmbc.drawPeace(lmbc.x, lmbc.y, lmbc.z);
-    mmb.drawPeace(mmb.x, mmb.y, mmb.z);
-    rmb.drawPeace(rmb.x, rmb.y, rmb.z);
-    lfb.drawPeace(lfb.x, lfb.y, lfb.z);
-    lfbc.drawPeace(lfbc.x, lfbc.y, lfbc.z);
-    mfb.drawPeace(mfb.x, mfb.y, mfb.z);
+    this.sideTop.forEach(side => {
+      // console.log("draw top peace:", side);
+      side.drawPeace(side.x, side.y, side.z);
+    });
+    this.sideLeft.forEach(side => {
+      // console.log("draw left peace:", side);
+      side.drawPeace(side.x, side.y, side.z);
+    });
+    this.sideFront.forEach(side => {
+      // console.log("draw left peace:", side);
+      side.drawPeace(side.x, side.y, side.z);
+    });
   }
 
   rotateTop(angl) {
     const tempAxis = this.axisTop;
-    this.sideTop.forEach((item, _) => {
-      item.rotatePeace(angl, tempAxis);
-    });
+    console.log("top before:");
+    for (let i = 0; i < 7; i += 3) {
+      console.log(
+        "-->",
+        this.sideTop[i],
+        this.sideTop[i + 1],
+        this.sideTop[i + 2]
+      );
+    }
+
     var newTopSideState = [
       this.sideTop[2],
       this.sideTop[5],
@@ -682,9 +660,29 @@ class Rubik {
       this.sideTop[3],
       this.sideTop[6],
     ];
+
+    console.log("left before top:");
+    for (let i = 0; i < 7; i += 3) {
+      console.log(
+        "-->",
+        this.sideLeft[i],
+        this.sideLeft[i + 1],
+        this.sideLeft[i + 2]
+      );
+    }
     this.sideTop = newTopSideState;
-    console.log("top:", this.sideTop);
-    console.log(this.sideLeft);
+    this.sideTop.forEach((item, _) => {
+      item.rotatePeace(angl, tempAxis);
+    });
+    console.log("top after:");
+    for (let i = 0; i < 7; i += 3) {
+      console.log(
+        "-->",
+        this.sideTop[i],
+        this.sideTop[i + 1],
+        this.sideTop[i + 2]
+      );
+    }
 
     this.sideLeft[0] = this.sideTop[0];
     this.sideLeft[1] = this.sideTop[3];
@@ -701,29 +699,41 @@ class Rubik {
     this.sideBack[0] = this.sideTop[2];
     this.sideBack[1] = this.sideTop[1];
     this.sideBack[2] = this.sideTop[0];
-  }
-  rotateBottom(angl) {
-    const tempAxis = this.axisTop;
-
-    this.peaces.leftBackBottomCorner.rotatePeace(angl, tempAxis);
-    this.peaces.middleBackBottom.rotatePeace(angl, tempAxis);
-    this.peaces.rightBackBottom.rotatePeace(angl, tempAxis);
-
-    this.peaces.leftMiddleBottomCorner.rotatePeace(angl, tempAxis);
-    this.peaces.middleMiddleBottom.rotatePeace(angl, tempAxis);
-    this.peaces.rightMiddleBottom.rotatePeace(angl, tempAxis);
-
-    this.peaces.leftFrontBottomCorner.rotatePeace(angl, tempAxis);
-    this.peaces.middleFrontBottom.rotatePeace(angl, tempAxis);
-    this.peaces.rightFrontBottom.rotatePeace(angl, tempAxis);
-    console.log("temt", tempAxis);
+    console.log("left after top:");
+    for (let i = 0; i < 7; i += 3) {
+      console.log(
+        "-->",
+        this.sideLeft[i],
+        this.sideLeft[i + 1],
+        this.sideLeft[i + 2]
+      );
+    }
   }
   rotateLeft(angl) {
     const tempAxis = this.axisSide;
+    console.log("left before:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideLeft[i],
+        this.sideLeft[i + 1],
+        this.sideLeft[i + 2]
+      );
+    }
+    console.log("top before left:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideTop[i],
+        this.sideTop[i + 1],
+        this.sideTop[i + 2]
+      );
+    }
     this.sideLeft.forEach((item, _) => {
       item.rotatePeace(angl, tempAxis);
     });
-    var newLeftSideState = [
+
+    const newLeftSideState = [
       this.sideLeft[2],
       this.sideLeft[5],
       this.sideLeft[8],
@@ -734,10 +744,20 @@ class Rubik {
       this.sideLeft[3],
       this.sideLeft[6],
     ];
-    this.sideLeft = newLeftSideState;
-    console.log("left:", this.sideLeft);
-    console.log(this.sideTop);
 
+    this.sideLeft = newLeftSideState;
+
+    console.log("left after:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideLeft[i],
+        this.sideLeft[i + 1],
+        this.sideLeft[i + 2]
+      );
+    }
+
+    // checked
     this.sideTop[0] = this.sideLeft[0];
     this.sideTop[3] = this.sideLeft[1];
     this.sideTop[6] = this.sideLeft[2];
@@ -753,7 +773,82 @@ class Rubik {
     this.sideBack[2] = this.sideLeft[0];
     this.sideBack[5] = this.sideLeft[3];
     this.sideBack[8] = this.sideLeft[6];
+    console.log("top after left:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideTop[i],
+        this.sideTop[i + 1],
+        this.sideTop[i + 2]
+      );
+    }
+    console.log("back after left:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideBack[i],
+        this.sideBack[i + 1],
+        this.sideBack[i + 2]
+      );
+    }
+    console.log("botom after left:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideBottom[i],
+        this.sideBottom[i + 1],
+        this.sideBottom[i + 2]
+      );
+    }
+    console.log("front after left:");
+    for (let i = 0; i < 9; i += 3) {
+      console.log(
+        "-->",
+        this.sideFront[i],
+        this.sideFront[i + 1],
+        this.sideFront[i + 2]
+      );
+    }
   }
+
+  rotateFront(angl) {
+    const tempAxis = this.axisFront;
+
+    const newFrontSideState = [
+      this.sideFront[2],
+      this.sideFront[5],
+      this.sideFront[8],
+      this.sideFront[1],
+      this.sideFront[4],
+      this.sideFront[7],
+      this.sideFront[0],
+      this.sideFront[3],
+      this.sideFront[6],
+    ];
+
+    this.sideFront = newFrontSideState;
+    this.sideFront.forEach((item, _) => {
+      item.rotatePeace(angl, tempAxis);
+    });
+
+    // checked
+    this.sideTop[6] = this.sideFront[0];
+    this.sideTop[7] = this.sideFront[1];
+    this.sideTop[8] = this.sideFront[2];
+
+    this.sideBottom[0] = this.sideFront[6];
+    this.sideBottom[1] = this.sideFront[7];
+    this.sideBottom[2] = this.sideFront[8];
+
+    this.sideLeft[2] = this.sideFront[0];
+    this.sideLeft[5] = this.sideFront[3];
+    this.sideLeft[8] = this.sideFront[6];
+
+    this.sideRight[0] = this.sideFront[2];
+    this.sideRight[3] = this.sideFront[5];
+    this.sideRight[6] = this.sideFront[8];
+  }
+
   drawRubik() {
     for (let yH = 0; yH < 3; yH++) {
       for (let i = 0; i < 3; i++) {
@@ -870,6 +965,7 @@ function draw() {
   line(0, 0, 0, 0, 1000, 0);
   stroke("green");
   line(0, 0, 0, 1000, 0, 0);
+
   cubik.drawByList();
 
   orbitControl();
@@ -887,14 +983,17 @@ function keyPressed() {
   if (rotatLeft === 360) {
     rotatLeft = 0;
   }
+  if (rotatFront === 360) {
+    rotatFront = 0;
+  }
   if (keyCode === KeyA) {
     rotatTop += 90;
     cubik.rotateTop(rotatTop);
-  } else if (keyCode === KeyS) {
-    rotatBottom += 90;
-    cubik.rotateBottom(rotatBottom);
   } else if (keyCode === KeyD) {
     rotatLeft += 90;
     cubik.rotateLeft(rotatLeft);
+  } else if (keyCode === KeyF) {
+    rotatFront += 90;
+    cubik.rotateFront(rotatFront);
   }
 }
